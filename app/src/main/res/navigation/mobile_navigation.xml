@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_alarm">
+
+    <fragment
+        android:id="@+id/nav_alarm"
+        android:name="com.nnoboa.istudy.ui.alarm.AlarmFragment"
+        android:label="@string/menu_alarm"
+        tools:layout="@layout/fragment_alarm" />
+
+    <fragment
+        android:id="@+id/nav_files"
+        android:name="com.nnoboa.istudy.ui.file_manager.FileFragment"
+        android:label="@string/menu_files"
+        tools:layout="@layout/fragment_files" />
+
+    <fragment
+        android:id="@+id/nav_flashcard"
+        android:name="com.nnoboa.istudy.ui.flashcard.FlashCardFragment"
+        android:label="@string/menu_flashcard"
+        tools:layout="@layout/fragment_flash_card" />
+
+    <fragment
+        android:id="@+id/nav_blog"
+        android:name="com.nnoboa.istudy.ui.blog.BlogFragment"
+        android:label="@string/menu_blog"
+        tools:layout="@layout/fragment_blog" />
+
+    <fragment
+        android:id="@+id/nav_study_chat"
+        android:name="com.nnoboa.istudy.ui.chat.ChatFragment"
+        android:label="@string/menu_chat"
+        tools:layout="@layout/fragment_glance_chat" />
+</navigation>

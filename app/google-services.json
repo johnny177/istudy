@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "192065455227",
+    "firebase_url": "https://istudy-9d456.firebaseio.com",
+    "project_id": "istudy-9d456",
+    "storage_bucket": "istudy-9d456.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192065455227:android:44f53b54bf5bf17cd4cede",
+        "android_client_info": {
+          "package_name": "com.nnoboa.istudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192065455227-5use2dvdkfit4eb7bqj0a5njfkarav37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nnoboa.istudy",
+            "certificate_hash": "2f8e05b9b73486540467c407ed367654d68da18a"
+          }
+        },
+        {
+          "client_id": "192065455227-muln5gmftcj5qt740ntc5hn5js2dqkv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcNFQhn9ZPdBJP0uU6ut4RN6GwkzEtRi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192065455227-muln5gmftcj5qt740ntc5hn5js2dqkv0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

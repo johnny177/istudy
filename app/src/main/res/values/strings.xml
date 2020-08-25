@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">istudy</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">User Profile Photo</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_alarm">Alarm</string>
+    <string name="menu_files">File Manager</string>
+    <string name="menu_flashcard">FlashCard</string>
+    <string name="menu_blog">Glance Learning Blog</string>
+    <string name="menu_chat">Glance Chat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alarm">Alarm</string>
+    <string name="study_chat">Study Chat</string>
+    <string name="glance_learning_blog">Glance Learning Blog</string>
+    <string name="flashcards">FlashCards</string>
+    <string name="file_manager">File Manager</string>
+    <string name="tab_title_reminder">Reminders</string>
+    <string name="tab_title_schedules">Schedules</string>
+</resources>
