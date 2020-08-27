@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.nnoboa.istudy">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
@@ -23,6 +30,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.alarm.editors.ReminderEditorActivity"
+            android:label="Add a Reminder"
+            />
+        <activity
+            android:name=".ui.alarm.editors.ScheduleEditorActivity"
+            android:label="Add a Schedule"
+            />
+
+        <provider
+            android:name=".ui.alarm.data.AlarmProvider"
+            android:authorities="com.nnoboa.istudy.schedules"
+            android:exported="false" />
+
+
+        <provider
+            android:name=".ui.flashcard.data.FlashProvider"
+            android:authorities="com.nnoboa.istudy.flash"
+            android:exported="false" />
+
+        <service
+            android:name=".ui.alarm.service.AlarmJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".ui.alarm.service.RingTonePlayingService"
+            android:enabled="true" />
+
+        <receiver android:name=".ui.alarm.service.AlarmReceiver" />
+
+        <service
+            android:name=".ui.alarm.service.JobRingtonePlayingService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -33,6 +73,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 

@@ -59,6 +59,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+import jp.wasabeef.picasso.transformations.CropSquareTransformation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -126,14 +127,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 //        DownloadDisplayImage(USER_PHOTO_URL,USER_NAME,USER_UID);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -295,4 +288,5 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
 }

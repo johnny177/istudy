@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/small_margin"
+    android:id="@+id/reminder_card"
+    android:backgroundTintMode="multiply"
+    android:background="@color/reminder_default_background"
+    android:backgroundTint="#DDFAF6"
+    android:elevation="@dimen/smaller_margin"
+    android:layout_margin="@dimen/largest_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/reminder_course_id_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amita_bold"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#2B3D4D" />
+<!--            <ImageView-->
+<!--                android:id="@+id/reminder_done_image"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:contentDescription="@string/image_to_check_if_schedule_is_done"/>-->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/reminder_course_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:fontFamily="sans-serif-condensed"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#AEB6BD"/>
+
+        <TextView
+            android:id="@+id/reminder_note_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:fontFamily="@font/archivo_black"
+            android:textAlignment="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#000F12" />
+
+        <TextView
+            android:id="@+id/reminder_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:drawablePadding="@dimen/smaller_margin"
+            android:fontFamily="@font/aclonica"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#391800"
+            app:drawableStartCompat="@drawable/ic_baseline_class_24" />
+
+        <TextView
+            android:id="@+id/reminder_loc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:fontFamily="@font/aclonica"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:textColor="#0A599F"
+            android:drawablePadding="@dimen/smaller_margin"/>
+
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:drawableStart="@drawable/ic_baseline_web_24"
+            android:drawablePadding="@dimen/smaller_margin"
+            android:fontFamily="@font/aclonica"
+            android:textAllCaps="false"
+            android:textColor="#0277BD"
+            android:textColorHighlight="#283593"
+            android:textStyle="italic"
+            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/smaller_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/reminder_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+                android:textAppearance="?android:textAppearanceMediumInverse"
+                android:textColor="#AEB6BD"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_margin="@dimen/smaller_margin"/>
+
+            <TextView
+                android:id="@+id/reminder_time"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_clock"
+                android:textAppearance="?android:textAppearanceMediumInverse"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#AEB6BD"
+                android:layout_margin="@dimen/smaller_margin"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/smaller_margin">
+
+            <TextView
+                android:id="@+id/reminder_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="?android:textAppearanceMediumInverse"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#000000"
+                android:layout_margin="@dimen/smaller_margin"/>
+            <TextView
+                android:id="@+id/reminder_interval"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_repeat"
+                android:fontFamily="sans-serif-condensed"
+                android:textAppearance="?android:textAppearanceMediumInverse"
+                android:textColor="#AEB6BD"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

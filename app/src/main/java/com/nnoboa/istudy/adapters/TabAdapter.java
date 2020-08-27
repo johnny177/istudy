@@ -8,13 +8,13 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlarmTabAdapter extends FragmentStatePagerAdapter {
+public class TabAdapter extends FragmentStatePagerAdapter {
     private final List<Fragment> fragments = new ArrayList<>();
 
     private final List<String> fragmentTitleList = new ArrayList<>();
 
 
-    public AlarmTabAdapter(@NonNull FragmentManager fm) {
+    public TabAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 

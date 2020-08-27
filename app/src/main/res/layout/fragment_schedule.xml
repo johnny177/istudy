@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.alarm.tabs.ScheduleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="ScheduleFragment"/>
+        android:background="#E9FFDB"
+        android:theme="@style/MyMaterialTheme"
+        tools:context=".activities.ScheduleActivity">
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/tem_textView"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_alignParentTop="true"-->
+        <!--        android:layout_margin="@dimen/small_margin"-->
+        <!--        />-->
+
+        <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_alignParentEnd="true"-->
+        <!--        android:layout_alignParentBottom="true"-->
+        <!--        android:layout_margin="@dimen/small_margin"-->
+        <!--        />-->
+
+        <!-- Empty view for the list -->
+        <RelativeLayout
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/empty_shelter_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/no_schedule"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/empty_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_shelter_image"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="16dp"
+                android:text="@string/you_may_delay_but_time_will_not"
+                android:textAppearance="?android:textAppearanceMedium"/>
+
+            <TextView
+                android:id="@+id/empty_subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_title_text"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif"
+                android:paddingTop="8dp"
+                android:text="@string/get_started_by_adding_a_schedule"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="#A2AAB0"/>
+        </RelativeLayout>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/smaller_margin"
+            android:horizontalSpacing="@dimen/smallest_padding"
+            android:choiceMode="multipleChoice"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/smaller_margin"
+            android:numColumns="auto_fit"
+            android:id="@+id/schedule_list" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius="@dimen/small_margin"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/small_margin"
+            android:background="@color/colorFloatTint"
+            android:text="@string/add_schedule"
+            android:textColor="@android:color/white"
+            android:padding="@dimen/smallest_padding"
+            app:icon="@drawable/add_schedule64"
+            android:backgroundTint="@color/colorFloatTint"
+            android:contentDescription="@string/opens_the_editor_activity"
+            app:shapeAppearance="?attr/shapeAppearanceOverlay"/>
+    </RelativeLayout>
 
 </FrameLayout>

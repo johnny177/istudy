@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/smaller_margin"
+    tools:context=".ui.alarm.editors.ReminderEditorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <!-- overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                android:text="@string/overview"
+                style="@style/CategoryStyle"/>
+
+            <!--Input fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+                <!--Course ID editfield-->
+                <EditText
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/course_id_eg_econ_312"
+                    android:inputType="textCapWords"
+                    android:textIsSelectable="true"
+                    android:autoSizeTextType="uniform"
+                    android:textAllCaps="true"
+                    android:id="@+id/reminder_edit_course_id"/>
+
+                <!--Course Name EditField-->
+                <EditText
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/course_name_eg_microeconomics"
+                    android:inputType="textCapWords"
+                    android:id="@+id/reminder_edit_course_name"
+                    android:autofillHints="" />
+
+                <!--Type Spinner input-->
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:paddingEnd="@dimen/small_margin"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/reminder_spinner_type"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--When to study Category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/when_to_remind"/>
+
+            <!--Input Fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+                <!--Time EditField-->
+                <EditText
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/time"
+                    android:inputType="time"
+                    android:id="@+id/reminder_edit_time"
+                    android:autofillHints="" />
+
+                <!--Date EditField-->
+                <EditText
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/date"
+                    android:inputType="date"
+                    android:id="@+id/reminder_edit_date"
+                    android:autofillHints="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:onClick="TimeDialog"
+                    android:layout_margin="@dimen/smallest_padding"
+                    android:background="@color/colorPrimary"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="DateDialog"
+                    android:layout_margin="@dimen/smallest_padding"
+                    android:background="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_baseline_calendar_today_24"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--When to study Category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/is_it_online"/>
+
+            <!--Input Fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+                <!--Online Checker-->
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:paddingEnd="@dimen/small_margin"
+                    android:padding="@dimen/small_margin"
+                    android:id="@+id/reminder_check_online"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Location Category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                android:id="@+id/location_text"
+                style="@style/CategoryStyle"
+                android:text="@string/location"/>
+
+            <!--Input Fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+                <!--Location EditField-->
+                <EditText
+                    android:id="@+id/reminder_edit_location"
+                    style="@style/EditorFieldStyle"
+                    android:autofillHints=""
+                    android:hint="@string/enter_location"
+                    android:inputType="textWebEditText" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Repeat Category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/repeat"/>
+
+            <!--Input Fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+                <!--Repeat CheckBox-->
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:paddingEnd="@dimen/small_margin"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:id="@+id/reminder_check_repeat"/>
+
+                <!--Spinner input-->
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:paddingEnd="@dimen/small_margin"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/reminder_spinner_interval"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Done Category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/done"/>
+
+            <!--Input Fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+                <!--Done CheckBox-->
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:paddingEnd="@dimen/small_margin"
+                    android:id="@+id/reminder_check_done"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Note Category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Label-->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/note"/>
+
+            <!--Input Fields-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/smallest_padding"
+                android:orientation="vertical">
+
+
+                <!--Note EditField-->
+                <EditText
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/thing_to_note"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/reminder_edit_note"
+                    android:autofillHints="" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

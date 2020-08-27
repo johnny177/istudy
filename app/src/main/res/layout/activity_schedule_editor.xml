@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/smaller_margin"
+    tools:context=".ui.alarm.editors.ScheduleEditorActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            android:text="@string/overview"
+          style="@style/CategoryStyle"/>
+
+        <!--Input fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Course ID editfield-->
+            <EditText
+               style="@style/EditorFieldStyle"
+                android:hint="@string/course_id_eg_econ_312"
+                android:inputType="textCapWords"
+                android:textIsSelectable="true"
+                android:autoSizeTextType="uniform"
+                android:textAllCaps="true"
+                android:id="@+id/edit_course_id"/>
+
+            <!--Course Name EditField-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:hint="@string/course_name_eg_microeconomics"
+                android:inputType="textCapWords"
+                android:id="@+id/edit_course_name"/>
+
+            <!--Topic EditField-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:hint="@string/topic_eg_demand"
+                android:inputType="textCapWords"
+                android:id="@+id/edit_topic"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--When to study Category-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/when_to_study"/>
+
+        <!--Input Fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Time EditField-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:hint="@string/time"
+                android:inputType="time"
+                android:enabled="false"
+                android:id="@+id/edit_time"/>
+
+            <!--Date EditField-->
+            <EditText
+               style="@style/EditorFieldStyle"
+                android:hint="@string/date"
+                android:enabled="false"
+                android:inputType="date"
+                android:id="@+id/edit_date"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_clock"
+                android:text="@string/time"
+                android:onClick="TimeDialog"
+                android:layout_margin="@dimen/smallest_padding"
+                android:background="@color/colorPrimary"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:onClick="DateDialog"
+                android:layout_margin="@dimen/smallest_padding"
+                android:background="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_baseline_calendar_today_24"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Repeat Category-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/repeat"/>
+
+        <!--Input Fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Repeat CheckBox-->
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:paddingRight="@dimen/small_margin"
+
+                android:backgroundTint="@color/colorPrimary"
+                android:id="@+id/check_repeat"/>
+
+            <!--Spinner input-->
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:paddingRight="@dimen/small_margin"
+                android:spinnerMode="dropdown"
+                android:id="@+id/spinner_interval"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Done Category-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/done"/>
+
+        <!--Input Fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Done CheckBox-->
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingRight="@dimen/small_margin"
+                android:id="@+id/check_done"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--Note Category-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/note"/>
+
+        <!--Input Fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+
+            <!--Note EditField-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:hint="@string/thing_to_note"
+                android:inputType="textMultiLine"
+                android:id="@+id/edit_note"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
