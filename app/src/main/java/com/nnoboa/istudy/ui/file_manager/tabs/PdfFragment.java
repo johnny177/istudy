@@ -17,7 +17,7 @@ import android.widget.ListView;
 
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.adapters.FilesAdapter;
-import com.nnoboa.istudy.ui.file_manager.pdfLoader;
+import com.nnoboa.istudy.ui.file_manager.loaders.pdfLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,6 +43,13 @@ public class PdfFragment extends Fragment implements LoaderManager.LoaderCallbac
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 pdfLoader.open_pdf(getActivity(),i);
                 Log.e("Position", i + "");
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                pdfLoader.shareFile(getContext(),position);
+                return true;
             }
         });
         getLoaderManager().initLoader(0,null,this).forceLoad();

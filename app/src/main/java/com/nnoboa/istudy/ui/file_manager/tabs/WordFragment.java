@@ -17,8 +17,8 @@ import android.widget.ListView;
 
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.adapters.FilesAdapter;
-import com.nnoboa.istudy.ui.file_manager.pdfLoader;
-import com.nnoboa.istudy.ui.file_manager.wordLoader;
+import com.nnoboa.istudy.ui.file_manager.loaders.pdfLoader;
+import com.nnoboa.istudy.ui.file_manager.loaders.wordLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,6 +43,13 @@ public class WordFragment extends Fragment implements LoaderManager.LoaderCallba
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 wordLoader.open_word(getActivity(),i);
                 Log.e("Position", i + "");
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                wordLoader.shareFile(getContext(),position);
+                return true;
             }
         });
         getLoaderManager().initLoader(0,null,this).forceLoad();

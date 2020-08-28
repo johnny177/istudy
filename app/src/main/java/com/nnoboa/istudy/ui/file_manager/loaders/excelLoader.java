@@ -1,4 +1,4 @@
-package com.nnoboa.istudy.ui.file_manager;
+package com.nnoboa.istudy.ui.file_manager.loaders;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -12,13 +12,14 @@ import androidx.core.content.FileProvider;
 import androidx.loader.content.AsyncTaskLoader;
 
 import java.io.File;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class wordLoader extends AsyncTaskLoader<List<File>> {
+public class excelLoader extends AsyncTaskLoader<List<File>> {
 
     String type;
-    public wordLoader(@NonNull Context context, String type) {
+    public excelLoader(@NonNull Context context, String type) {
         super(context);
         this.type = type;
     }
@@ -74,7 +75,7 @@ public class wordLoader extends AsyncTaskLoader<List<File>> {
         return filesList;
     }
 
-    public static void open_word(Context context, int position) {
+    public static void open_excel(Context context, int position) {
         File file = new File(filesList.get(position).getAbsolutePath());
         Uri
                 uri =
@@ -98,6 +99,15 @@ public class wordLoader extends AsyncTaskLoader<List<File>> {
             context.startActivity(intent1);
         } catch (ActivityNotFoundException e) {
         }
+    }
 
+    public static void shareFile(Context context, int position){
+        File file = new File (filesList.get(position).getAbsolutePath());
+        Uri uri = FileProvider.getUriForFile(context,context.getPackageName() + ".provider",file);
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.putExtra(Intent.EXTRA_STREAM,uri);
+        intent.setType(context.getContentResolver().getType(uri));
+        context.startActivity(Intent.createChooser(intent,"Share File "));
     }
 }

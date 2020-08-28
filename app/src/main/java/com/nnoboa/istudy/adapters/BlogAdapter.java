@@ -14,13 +14,13 @@ import androidx.annotation.NonNull;
 
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.nnoboa.istudy.R;
-import com.nnoboa.istudy.ui.blog.blogUtils.BlogItems;
+import com.nnoboa.istudy.ui.blog.blogUtils.BlogItem;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BlogAdapter extends ArrayAdapter<BlogItems> {
-    public BlogAdapter(@NonNull Context context, ArrayList<BlogItems> blogItems) {
+public class BlogAdapter extends ArrayAdapter<BlogItem> {
+    public BlogAdapter(@NonNull Context context, ArrayList<BlogItem> blogItems) {
         super(context, 0, blogItems);
     }
 
@@ -35,7 +35,7 @@ public class BlogAdapter extends ArrayAdapter<BlogItems> {
                     LayoutInflater.from(parent.getContext()).inflate(R.layout.blog, parent, false);
         }
 
-        BlogItems blogItems = getItem(position);
+        BlogItem blogItems = getItem(position);
 
         TextView authCred = blogView.findViewById(R.id.auth_name);
         TextView author = blogView.findViewById(R.id.author);

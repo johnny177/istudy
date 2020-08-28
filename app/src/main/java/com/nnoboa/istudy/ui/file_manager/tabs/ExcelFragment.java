@@ -17,8 +17,8 @@ import android.widget.ListView;
 
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.adapters.FilesAdapter;
-import com.nnoboa.istudy.ui.file_manager.excelLoader;
-import com.nnoboa.istudy.ui.file_manager.pdfLoader;
+import com.nnoboa.istudy.ui.file_manager.loaders.excelLoader;
+import com.nnoboa.istudy.ui.file_manager.loaders.pdfLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,6 +44,13 @@ public class ExcelFragment extends Fragment implements LoaderManager.LoaderCallb
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 excelLoader.open_excel(getActivity(),i);
                 Log.e("Position", i + "");
+            }
+        });
+        fileList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                excelLoader.shareFile(getContext(),position);
+                return true;
             }
         });
         getLoaderManager().initLoader(0,null,this).forceLoad();

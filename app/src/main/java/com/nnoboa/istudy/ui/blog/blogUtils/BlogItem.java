@@ -1,11 +1,9 @@
 package com.nnoboa.istudy.ui.blog.blogUtils;
 
-public class BlogItems {
-
-    /**
-     * The author of the blog
-     */
-    private String mAuthor;
+public class BlogItem {    /**
+ * The author of the blog
+ */
+private String mAuthor;
 
     /**
      * The title of the blog
@@ -30,14 +28,14 @@ public class BlogItems {
      * @param time  is the date and time the blog was published
      */
 
-    public BlogItems(String auth, String title, String url, String time) {
+    public BlogItem(String auth, String title, String url, String time) {
         mAuthor = auth;
         mTitle = title;
         mDatePublished = time;
         mUrl = url;
     }
 
-    public BlogItems() {
+    public BlogItem() {
 
     }
 
