@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nnoboa.istudy">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -9,7 +10,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
 
     <application
@@ -19,7 +21,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.chat.activities.GroupInfoActivity"></activity>
+        <activity android:name=".ui.chat.activities.FriendInfoActivity" />
+        <activity android:name=".ui.chat.activities.UserInfoActivity" />
+        <activity android:name=".ui.chat.activities.CreateGroupActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -32,19 +37,15 @@
         </activity>
         <activity
             android:name=".ui.alarm.editors.ReminderEditorActivity"
-            android:label="Add a Reminder"
-            />
+            android:label="Add a Reminder" />
         <activity
             android:name=".ui.alarm.editors.ScheduleEditorActivity"
-            android:label="Add a Schedule"
-            />
+            android:label="Add a Schedule" />
 
         <provider
             android:name=".ui.alarm.data.AlarmProvider"
             android:authorities="com.nnoboa.istudy.schedules"
             android:exported="false" />
-
-
         <provider
             android:name=".ui.flashcard.data.FlashProvider"
             android:authorities="com.nnoboa.istudy.flash"
@@ -63,7 +64,6 @@
             android:name=".ui.alarm.service.JobRingtonePlayingService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.nnoboa.istudy.provider"
@@ -73,6 +73,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
