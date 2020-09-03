@@ -2,6 +2,8 @@ package com.nnoboa.istudy.ui.file_manager;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -38,5 +40,11 @@ public class FileFragment extends Fragment {
         viewPager.setAdapter(tabAdapter);
         tabLayout.setupWithViewPager(viewPager);
         return root;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

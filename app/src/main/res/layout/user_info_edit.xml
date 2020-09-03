@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="300dp"
+    android:background="@android:drawable/screen_background_light_transparent"
+    android:theme="@style/Theme.MaterialComponents"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editPhoneView"
+        android:layout_margin="8dp"
+        android:isScrollContainer="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_phone"
+                android:textColor="@color/colorAccent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneEdit"
+                    android:inputType="phone"
+                    android:digits="0123456789+"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/FirebaseUI.TextInputEditText.PhoneField"
+                    android:hint="@string/start_with_country_code_like_233_551"
+                    android:minHeight="44dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/updatePhoneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:text="Update Phone Number"
+                app:cornerRadius="16dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorFloatTint"
+                app:shapeAppearanceOverlay="?attr/shapeAppearanceOverlay"/>
+
+
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/editUsernameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:isScrollContainer="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Username"
+                android:textColor="@color/colorAccent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"             >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Eg: @johnny"
+                    android:minHeight="44dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/updateUsernameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:text="Update Username"
+                app:cornerRadius="16dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorFloatTint"
+                app:shapeAppearanceOverlay="?attr/shapeAppearanceOverlay"/>
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:id="@+id/editBioView"
+        android:isScrollContainer="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_bio"
+                android:textColor="@color/colorAccent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bioEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/FirebaseUI.TextInputEditText.NameField"
+                    android:hint="@string/enter_simple_bio_like_i_m_22y_o_studying_economics_at"
+                    android:minHeight="44dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/updateBioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:text="Update Bio"
+                app:cornerRadius="16dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorFloatTint"
+                app:shapeAppearanceOverlay="?attr/shapeAppearanceOverlay"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:id="@+id/editDisplayNameView"
+        android:isScrollContainer="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Display Name"
+                android:textColor="@color/colorAccent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="44dp"
+                app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dnEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/FirebaseUI.TextInputEditText.NameField"
+                    android:hint="Name you want others to see in your chat"
+                    android:minHeight="44dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/updateDnButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:text="Update Name"
+                app:cornerRadius="16dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorFloatTint"
+                app:shapeAppearanceOverlay="?attr/shapeAppearanceOverlay"/>
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_margin="16dp"
+        android:id="@+id/close"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

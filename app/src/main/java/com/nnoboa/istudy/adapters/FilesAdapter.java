@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,12 +18,16 @@ import java.util.List;
 public class FilesAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<File> files =  new ArrayList<File>();
+    public static List<File> temporallist;
 
     public FilesAdapter(Context context,List<File> files){
         this.files = files;
         inflater = LayoutInflater.from(context);
+        temporallist = files;
 
     }
+
+
 
     @Override
     public int getCount() {
@@ -76,6 +81,37 @@ public class FilesAdapter extends BaseAdapter {
     public void clear(){
         files.clear();
         notifyDataSetChanged();
+    }
+
+    public Filter getFilter(){
+        Filter filter = new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                List<File> FilteredList = new ArrayList<>();
+                if(constraint == null || constraint.length() == 0){
+                    results.values= files;
+                    results.count = files.size();
+                }else{
+                    for (int i = 0; i <files.size(); i++){
+                        File file = files.get(i);
+                        if(file.getName().toLowerCase().contains(constraint.toString())){
+                            FilteredList.add(file);
+                        }
+                    }
+                    results.values = FilteredList;
+                    results.count = FilteredList.size();
+                }
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                temporallist = (List<File>) results.values;
+                notifyDataSetChanged();
+            }
+        };
+        return filter;
     }
 
 }

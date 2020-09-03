@@ -21,9 +21,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.chat.activities.GroupInfoActivity"></activity>
-        <activity android:name=".ui.chat.activities.FriendInfoActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity"
+            android:allowTaskReparenting="true"></activity>
         <activity android:name=".ui.chat.activities.UserInfoActivity" />
+        <activity android:name=".ui.chat.activities.GroupInfoActivity" />
         <activity android:name=".ui.chat.activities.CreateGroupActivity" />
         <activity
             android:name=".MainActivity"

@@ -231,7 +231,7 @@ public class ReminderFragment extends Fragment implements LoaderManager.LoaderCa
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        getActivity().invalidateOptionsMenu();
+        menu.clear();
         inflater.inflate(R.menu.menu_reminder,menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -247,5 +247,6 @@ public class ReminderFragment extends Fragment implements LoaderManager.LoaderCa
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }

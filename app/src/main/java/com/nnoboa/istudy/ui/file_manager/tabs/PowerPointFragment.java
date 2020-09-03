@@ -10,6 +10,8 @@ import androidx.loader.content.Loader;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -76,6 +78,14 @@ public class PowerPointFragment extends Fragment implements LoaderManager.Loader
     public void onLoaderReset(@NonNull Loader<List<File>> loader) {
         filesAdapter.setFiles(new ArrayList<File>());
     }
+    @Override
+    public void onPrepareOptionsMenu(@NonNull Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+    }
 
-
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 }

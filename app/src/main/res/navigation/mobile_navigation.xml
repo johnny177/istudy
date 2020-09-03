@@ -34,4 +34,11 @@
         android:name="com.nnoboa.istudy.ui.chat.ChatFragment"
         android:label="@string/menu_chat"
         tools:layout="@layout/fragment_glance_chat" />
+    <activity
+        android:id="@+id/nav_settings"
+        android:name="com.nnoboa.istudy.SettingsActivity"
+        android:label="Settings"
+        tools:layout="@layout/settings_activity"/>
+
+
 </navigation>

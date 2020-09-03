@@ -7,16 +7,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
     <!--Login them for the firebase sign in UI-->
     <style name="LoginTheme" parent="FirebaseUI">
-    <item name="colorPrimary">#FFFFFF</item>
-    <item name="title">Duchess Chat</item>
-    <item name="colorAccent">@color/colorAccent</item>
-    <item name="colorPrimaryDark">#C5C5C5</item>
-    <item name="colorButtonNormal">@android:color/white</item>
-    <item name="windowNoTitle">true</item>
-    <item name="android:windowBackground">@drawable/login_background</item>
-    <item name="icon">@drawable/ic_logo</item>
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="title">Duchess Chat</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">#C5C5C5</item>
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/login_background</item>
+        <item name="icon">@drawable/ic_logo</item>
     </style>
 
 
@@ -27,6 +35,7 @@
 
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="MyMaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Add attributes here -->
         <item name="colorPrimary">@color/colorPrimary</item>
