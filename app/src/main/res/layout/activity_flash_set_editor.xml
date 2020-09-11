@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.flashcard.editors.FlashSetEditorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:theme="@style/MyMaterialTheme"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            android:layout_margin="16dp"
+            android:hint="Flash Set Name">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditorFieldStyle"
+                android:inputType="textCapWords"
+                android:textIsSelectable="true"
+                android:autoSizeTextType="uniform"
+                android:textAllCaps="true"
+                android:background="@android:color/transparent"
+                android:id="@+id/edit_flash_set_name"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+                <!--Course ID editfield-->
+
+                <!--Course Name EditField-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            android:layout_margin="16dp"
+            android:hint="Enter Description of the Set"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/EditorFieldStyle"
+                android:inputType="textCapWords"
+                android:background="@android:color/transparent"
+                android:id="@+id/edit_descp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_set"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            app:cornerRadius="@dimen/small_margin"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/small_margin"
+            android:background="@color/colorPrimary"
+            android:text="@string/add_reminder"
+            android:textColor="@android:color/white"
+            android:padding="@dimen/smallest_padding"
+            app:icon="@drawable/flashcard"
+            android:backgroundTint="@color/colorFloatTint"
+            android:contentDescription="@string/opens_the_editor_activity"
+            app:shapeAppearance="?attr/shapeAppearanceOverlay"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

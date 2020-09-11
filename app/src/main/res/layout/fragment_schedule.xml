@@ -87,7 +87,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/small_margin"
-            android:background="@color/colorFloatTint"
             android:text="@string/add_schedule"
             android:textColor="@android:color/white"
             android:padding="@dimen/smallest_padding"

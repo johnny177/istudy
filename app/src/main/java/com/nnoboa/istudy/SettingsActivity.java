@@ -114,24 +114,29 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
             FirebaseUser user = firebaseAuth.getCurrentUser();
-            if(user != null){
-                OnSignedInInitialize(user.getDisplayName(),user.getEmail(),user.getPhotoUrl().toString(),user.getUid());
-            }else{
-                OnSignOutCleanUp();
-                List<AuthUI.IdpConfig> providers = Arrays.asList(
-                        new AuthUI.IdpConfig.EmailBuilder().build(),
-                        new AuthUI.IdpConfig.GoogleBuilder().build()
-                );
+            try {
+                if(user != null){
+                    OnSignedInInitialize(user.getDisplayName(),user.getEmail(),user.getPhotoUrl().toString(),user.getUid());
+                }else{
+                    OnSignOutCleanUp();
+                    List<AuthUI.IdpConfig> providers = Arrays.asList(
+                            new AuthUI.IdpConfig.EmailBuilder().build(),
+                            new AuthUI.IdpConfig.GoogleBuilder().build()
+                    );
 
-                startActivityForResult(
-                        AuthUI.getInstance()
-                                .createSignInIntentBuilder()
-                                .setAvailableProviders(providers)
-                                .setTheme(R.style.LoginTheme)
-                                .setLogo(R.drawable.ic_logo)
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                                    .createSignInIntentBuilder()
+                                    .setAvailableProviders(providers)
+                                    .setTheme(R.style.LoginTheme)
+                                    .setLogo(R.drawable.ic_logo)
 
-                                .build(), RC_SIGN_IN
-                );
+                                    .build(), RC_SIGN_IN
+                    );
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                OnSignedInInitialize(user.getDisplayName(),user.getEmail(),null,user.getUid());
             }
         }
     };

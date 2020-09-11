@@ -6,10 +6,11 @@ import android.provider.BaseColumns;
 
 public class FlashContract {
 
-    public static final String CONTENT_AUTHORITY = "com.nnoboa.duchess.flash";
+    public static final String CONTENT_AUTHORITY = "com.nnoboa.istudy.flash";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     public static final String PATH_SETS = "sets";
     public static final String PATH_CARDS = "cards";
+
     private FlashContract() {
     }
 
@@ -50,15 +51,24 @@ public class FlashContract {
 
         public static final String COLUMN_DESCRIPTION = "set_description";
 
-        public static final String COLUMN_SEMESTER = "semester";
+        public static final String COLUMN_STAR = "star";
 
         public static final String COLUMN_ACADEMIC_YEAR = "academic_year";
 
         public static final String COLUMN_COUNT = BaseColumns._COUNT;
 
-        public static final String COLUMN_STUDY_STATUS = "study_status";
+        public static final String COLUMN_PROGRESS = "progress";
 
         public static final String COLUMN_DATE_CREATED = "date_created";
+
+
+        /**
+         * possible favorite values
+         */
+
+        public static final int STAR = 0;
+
+        public static final int UNSTAR = 1;
 
     }
 
@@ -105,6 +115,11 @@ public class FlashContract {
 
         public static final String COLUMN_TAG_TEXT = "tag_text";
 
-        public static final String COLUMN_URI = "path_of_drawings";
+        public static final String COLUMN_FRONT_URI = "front_drawings/photos_uri";
+
+        public static final String COLUMN_BACK_URI = "back_drawings/photos_uri";
+
+        public static final String COLUMN_CARD_PROGRESS = "card_progress";
+
     }
 }

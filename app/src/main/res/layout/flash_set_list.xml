@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minHeight="100dp"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="4dp"
+    app:cardElevation="16dp"
+    app:cardMaxElevation="32dp">
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:text="FlashSet NAME"-->
+<!--            style="@style/FlashTextView"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:id="@+id/flash_set_name"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/ic_num_flashcard"-->
+<!--            android:text="99+"-->
+<!--            android:paddingTop="5dp"-->
+<!--            android:textSize="7sp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:paddingLeft="6.5dp"-->
+<!--            android:fontFamily="@font/coiny"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:id="@+id/flash_count"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="this textview is a placeholder for the flash set description"-->
+<!--            android:id="@+id/flashset_descp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_below="@id/flash_set_name"-->
+<!--            android:fontFamily="@font/amita_bold"/>-->
+<!--        -->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/flashset_date_created"-->
+<!--            android:text="15th September, 2020"-->
+<!--            android:textSize="10sp"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:layout_alignParentEnd="true"/>-->
+
+<!--    </RelativeLayout>-->
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="0.1"
+              android:layout_height="wrap_content"
+              android:background="@drawable/ic_num_flashcard"
+              android:layout_margin="8dp"
+              android:text="99+"
+              android:id="@+id/flashcard_count"
+              android:textSize="7sp"
+              android:paddingTop="8dp"
+              android:paddingLeft="6dp"
+              android:fontFamily="@font/archivo_black"/>
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="wrap_content" 
+                android:text="FlashSet NAME"
+                android:textSize="30sp"
+                style="@style/FlashTextView"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="8dp"
+                android:id="@+id/flash_set_name"/>
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                
+                <ImageView
+                    android:id="@+id/flashset_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_off"/>
+                
+                <ImageView
+                    android:id="@+id/flash_set_fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/star_big_on"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="this textview is a placeholder for the flash set description"
+            android:id="@+id/flashset_descp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:layout_below="@id/flash_set_name"
+            android:fontFamily="@font/amita_bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/flashset_date_created"
+                android:text="15th September, 2020"
+                android:textSize="10sp"
+                android:layout_margin="8dp"
+                />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_speaker_24"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

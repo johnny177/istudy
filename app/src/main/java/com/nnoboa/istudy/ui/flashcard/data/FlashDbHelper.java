@@ -19,15 +19,12 @@ public class FlashDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_SQL_SET_DB = "CREATE TABLE " + FlashContract.SetEntry.TABLE_NAME + " (" +
                 FlashContract.SetEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                FlashContract.SetEntry.COLUMN_TITLE + " TEXT NOT NULL, " +
+                FlashContract.SetEntry.COLUMN_TITLE + " TEXT NOT NULL PRIMARY KEY, " +
                 FlashContract.SetEntry.COLUMN_DESCRIPTION + " TEXT, " +
-                FlashContract.SetEntry.COLUMN_SEMESTER + " TEXT NOT NULL, " +
-                FlashContract.SetEntry.COLUMN_ACADEMIC_YEAR + " TEXT NOT NULL, " +
+                FlashContract.SetEntry.COLUMN_STAR + " INTEGER NOT NULL DEFAULT 0, " +
                 FlashContract.SetEntry.COLUMN_COUNT + " INTEGER DEFAULT 0, " +
-                FlashContract.SetEntry.COLUMN_STUDY_STATUS + " INTEGER DEFAULT 0, " +
+                FlashContract.SetEntry.COLUMN_PROGRESS + " INTEGER DEFAULT 0, " +
                 FlashContract.SetEntry.COLUMN_DATE_CREATED + " INTEGER NOT NULL DEFAULT 0 )";
-
-
         db.execSQL(CREATE_SQL_SET_DB);
     }
 
@@ -43,7 +40,8 @@ public class FlashDbHelper extends SQLiteOpenHelper {
                 FlashContract.CardEntry.COLUMN_FRONT_TEXT + " TEXT, " +
                 FlashContract.CardEntry.COLUMN_BACK_TEXT + " TEXT, " +
                 FlashContract.CardEntry.COLUMN_TAG_TEXT + " TEXT NOT NULL, " +
-                FlashContract.CardEntry.COLUMN_URI + " TEXT )";
+                FlashContract.CardEntry.COLUMN_FRONT_URI + " TEXT, " +
+                FlashContract.CardEntry.COLUMN_BACK_URI+ " TEXT )";
         db.execSQL(CREATE_SET_CARD_TABLE);
     }
 }

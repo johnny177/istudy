@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="300dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="16dp"
+    android:background="@color/colorFloatTint"
+    android:backgroundTint="@color/colorPrimary"
+    android:backgroundTintMode="src_over"
+    app:cardMaxElevation="32dp">
+
+    <LinearLayout
+        android:id="@+id/frontView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/flashImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="center"
+            android:visibility="gone"
+            android:src="@drawable/test2"/>
+
+        <TextView
+            android:id="@+id/frontTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@android:color/white"
+            android:fontFamily="@font/enriqueta_bold"
+            android:textAlignment="gravity"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tagTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:fontFamily="@font/berkshire_swash"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="this is a plce holder for the tag of the flash card"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                />
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="100dp"
+                android:id="@+id/CardbarChart"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

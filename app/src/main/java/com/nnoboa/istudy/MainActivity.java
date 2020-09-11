@@ -8,8 +8,10 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -34,6 +36,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.nnoboa.istudy.Utils.TextDrawable;
 import com.nnoboa.istudy.ui.chat.activities.GroupInfoActivity;
 import com.nnoboa.istudy.ui.chat.activities.UserInfoActivity;
 import com.nnoboa.istudy.ui.chat.models.User;
@@ -109,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
                     OnSignedInInitialize(user.getDisplayName(),user.getEmail(),user.getPhotoUrl().toString(),user.getUid());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
+                }catch (NullPointerException e){
+                    try {
+                        OnSignedInInitialize(user.getDisplayName(),user.getEmail(),null,user.getUid());
+                    } catch (MalformedURLException ex) {
+                        ex.printStackTrace();
+                    }
                 }
             }else{
                 OnSignOutCleanUp();
@@ -134,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         userEmail.setText(email);
         userName.setText(displayName);
         String uri = preferences.getString("dp",null);
-        if(uri== null){
+        if(uri== null && photoUrl != null){
             Picasso.get()
                     .load(photoUrl)
                     .transform(new CropCircleTransformation())
@@ -182,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         fn_permission();
-        loadUserProfile();
+//        loadUserProfile();
         userEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -297,14 +306,19 @@ public class MainActivity extends AppCompatActivity {
     private void loadUserProfile(){
         SharedPreferences preferences = getSharedPreferences(PREF,Context.MODE_PRIVATE);
         String dpUri = preferences.getString("dp",null);
+        if(dpUri != null) {
+            nav_parentView.setBackgroundDrawable(BitmapDrawable.createFromPath(dpUri));
+            File file = new File(dpUri);
+            Picasso.get()
+                    .load(file)
+                    .fit()
+                    .transform(new CropCircleTransformation())
+                    .into(userPhoto);
+        }else{
+            TextDrawable textDrawable = new TextDrawable(USER_NAME.substring(0,1));
+            nav_parentView.setBackgroundDrawable(textDrawable);
+        }
 
-        nav_parentView.setBackgroundDrawable(BitmapDrawable.createFromPath(String.valueOf(dpUri)));
-        File file = new File(dpUri);
-        Picasso.get()
-                .load(file)
-                .fit()
-                .transform(new CropCircleTransformation())
-                .into(userPhoto);
     }
 
     private void loadViews(){
