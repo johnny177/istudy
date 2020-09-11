@@ -160,10 +160,10 @@ public class ReminderCursorAdapter extends CursorAdapter {
 
         switch (reminderStatus) {
             case AlarmContract.ReminderEntry.STATUS_IS_DONE:
-                cardView.setCardBackgroundColor(android.R.color.background_dark);
+                cardView.setEnabled(false);
                 break;
             case AlarmContract.ReminderEntry.STATUS_IS_NOT_DONE:
-                cardView.setBackgroundColor(Color.WHITE);
+                cardView.setEnabled(true);
                 break;
         }
 

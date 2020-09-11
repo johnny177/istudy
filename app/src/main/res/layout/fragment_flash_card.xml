@@ -71,7 +71,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/small_margin"
-            android:text="@string/add_reminder"
+            android:text="Add FlashSet"
             android:textColor="@android:color/white"
             android:padding="@dimen/smallest_padding"
             android:backgroundTint="@color/clean_color"

@@ -99,11 +99,10 @@
                 android:orientation="vertical"
                 >
                 
-                <ImageView
-                    android:id="@+id/flashset_progress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/star_big_off"/>
+               <com.github.mikephil.charting.charts.BarChart
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/overallProgress"/>
                 
                 <ImageView
                     android:id="@+id/flash_set_fav"
@@ -142,6 +141,7 @@
                 android:layout_weight="0.3"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:id="@+id/speaker"
                 android:src="@drawable/ic_speaker_24"
                 android:layout_gravity="end"/>
         </LinearLayout>

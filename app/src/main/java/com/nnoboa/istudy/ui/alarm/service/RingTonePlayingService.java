@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.IBinder;
@@ -89,7 +90,7 @@ public class RingTonePlayingService extends Service {
         NotificationHelper notificationHelper = new NotificationHelper(getApplicationContext());
         NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        Uri ringtone = Uri.parse(preferences.getString("general_ringtone", null));
+        Uri ringtone = Uri.parse(preferences.getString("general_ringtone", String.valueOf(RingtoneManager.getActualDefaultRingtoneUri(this,RingtoneManager.TYPE_ALARM))));
         Log.d("RingtonePlayingService", "Notification " + ringtone);
         nb.setSound(ringtone);
 //        MediaPlayer ringTone = MediaPlayer.create(getApplicationContext(),ringtone);
