@@ -21,9 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.flashcard.editors.DetailActivity"></activity>
-        <activity android:name=".ui.flashcard.editors.CardEditorActivity" />
-        <activity android:name=".ui.flashcard.editors.FlashSetEditorActivity" />
+        <activity android:name=".ui.flashcard.activities.detail.DetailActivity"></activity>
+        <activity android:name=".ui.flashcard.activities.editors.CardEditorActivity" />
+        <activity android:name=".ui.flashcard.activities.editors.FlashSetEditorActivity" />
         <activity
             android:name=".SettingsActivity"
             android:allowTaskReparenting="true"

@@ -219,5 +219,8 @@
     <string name="enter_phone">Enter Phone</string>
     <string name="enter_simple_bio_like_i_m_22y_o_studying_economics_at">Enter simple bio like ; I\'m 22y.o. studying economics at......</string>
     <string name="enter_bio">Enter Bio</string>
+    <string name="education_quote_set_quote">Education is the passport to the future, for tomorrow belongs to those who prepare for it today. - Malcom X</string>
+    <string name="add_a_new_flash_set_to_begin">Add a new flash set to begin</string>
+    <string name="add_flashset">Add FlashSet</string>
 
 </resources>

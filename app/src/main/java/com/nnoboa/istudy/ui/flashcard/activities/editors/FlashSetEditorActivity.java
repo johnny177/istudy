@@ -48,6 +48,18 @@ public class FlashSetEditorActivity extends AppCompatActivity implements LoaderM
         setContentView(R.layout.activity_flash_set_editor);
         AndroidThreeTen.init(this);
         loadviews();
+        checkers();
+
+        addSet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    saveSet();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
 
@@ -192,6 +204,7 @@ public class FlashSetEditorActivity extends AppCompatActivity implements LoaderM
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        if (data.moveToFirst()){
         int nameCloumnInex = data.getColumnIndex(FlashContract.SetEntry.COLUMN_TITLE);
         int descpColumnIndex = data.getColumnIndexOrThrow(FlashContract.SetEntry.COLUMN_DESCRIPTION);
 
@@ -199,7 +212,7 @@ public class FlashSetEditorActivity extends AppCompatActivity implements LoaderM
         String descp = data.getString(descpColumnIndex);
 
         nameedit.setText(curentName);
-        descpEdit.setText(descp);
+        descpEdit.setText(descp);}
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.nnoboa.istudy.ui.flashcard.editors;
+package com.nnoboa.istudy.ui.flashcard.activities.editors;
 
 import androidx.appcompat.app.AppCompatActivity;
 

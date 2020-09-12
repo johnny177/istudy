@@ -38,7 +38,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-medium"
                 android:paddingTop="16dp"
-                android:text="@string/reminder_empty_text"
+                android:text="@string/education_quote_set_quote"
                 android:textAppearance="?android:textAppearanceMedium"/>
 
             <TextView
@@ -49,14 +49,16 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif"
                 android:paddingTop="8dp"
-                android:text="@string/get_started_by_adding_a_reminder"
+                android:text="@string/add_a_new_flash_set_to_begin"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textColor="#A2AAB0"/>
         </RelativeLayout>
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/flash_set_list"
+
+            android:visibility="gone"
+            tools:listitem="@layout/flash_set_listview"
             android:padding="@dimen/small_margin"
             android:dividerHeight="@dimen/smaller_margin"
             android:divider="@android:color/transparent"
@@ -71,7 +73,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/small_margin"
-            android:text="Add FlashSet"
+            android:text="@string/add_flashset"
             android:textColor="@android:color/white"
             android:padding="@dimen/smallest_padding"
             android:backgroundTint="@color/clean_color"

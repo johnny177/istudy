@@ -19,7 +19,7 @@ public class FlashDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_SQL_SET_DB = "CREATE TABLE " + FlashContract.SetEntry.TABLE_NAME + " (" +
                 FlashContract.SetEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                FlashContract.SetEntry.COLUMN_TITLE + " TEXT NOT NULL PRIMARY KEY, " +
+                FlashContract.SetEntry.COLUMN_TITLE + " TEXT NOT NULL, " +
                 FlashContract.SetEntry.COLUMN_DESCRIPTION + " TEXT, " +
                 FlashContract.SetEntry.COLUMN_STAR + " INTEGER NOT NULL DEFAULT 0, " +
                 FlashContract.SetEntry.COLUMN_COUNT + " INTEGER DEFAULT 0, " +
