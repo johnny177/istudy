@@ -375,7 +375,7 @@ public class ReminderEditorActivity extends AppCompatActivity implements android
             try {
                 Uri newRowId = getContentResolver().insert(ReminderEntry.CONTENT_URI, values);
                 Log.d("ReminderEditor", "added " + newRowId);
-                Toast.makeText(this, "Reminder Saved " + newRowId, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "New Reminder Saved ", Toast.LENGTH_SHORT).show();
 
                 if (newRowId != null) {
                     finish();

@@ -1,9 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ui.flashcard.editors.CardEditorActivity">
+    android:layout_margin="8dp"
+    tools:context=".ui.flashcard.activities.editors.CardEditorActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            android:text="@string/term"
+            android:textColor="#FF0000"
+            style="@style/CategoryStyle"/>
+
+        <!--Input fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Term editfield-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:inputType="textCapWords"
+                android:textIsSelectable="true"
+                android:autoSizeTextType="uniform"
+                android:textAllCaps="true"
+                android:id="@+id/term_edit_field"
+                android:autofillHints="" tools:targetApi="o" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            android:textColor="#FF0000"
+            android:text="@string/definition"
+            style="@style/CategoryStyle"/>
+
+        <!--Input fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Term editfield-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:inputType="textCapWords"
+                android:textIsSelectable="true"
+                android:allowUndo="true"
+                android:autoSizeTextType="uniform"
+                android:textAllCaps="true"
+                android:id="@+id/definition_edit_field"
+                android:autofillHints="" tools:targetApi="o" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            android:textColor="#FF0000"
+            android:text="@string/tag"
+            style="@style/CategoryStyle"/>
+
+        <!--Input fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Term editfield-->
+            <EditText
+                style="@style/EditorFieldStyle"
+                android:inputType="textCapWords"
+                android:textIsSelectable="true"
+                android:autoSizeTextType="uniform"
+                android:textAllCaps="true"
+                android:hint="@string/tag_for_image_paint_object"
+                android:id="@+id/tag_edit_field"
+                android:autofillHints="" tools:targetApi="o" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            android:text="Is Image or Paint Object Available ?"
+            android:textColor="#FF0000"
+            style="@style/CategoryStyle"/>
+
+        <!--Input fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:padding="@dimen/smallest_padding"
+            android:orientation="vertical">
+
+            <!--Term editfield-->
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_availability_check"
+                android:layout_margin="16dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Label-->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/image_paint"
+            android:textColor="#FF0000" />
+
+        <!--Input fields-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="@dimen/smallest_padding"
+            android:theme="@style/MyMaterialTheme">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/add_image"
+                    android:text="@string/select_image_from_phone"
+                    app:icon="@drawable/ic_add_image" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_paint"
+                    android:layout_margin="8dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/create_a_paint_object"
+                    app:icon="@drawable/ic_paint" />
+            </LinearLayout>
+            <!--Term editfield-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/preview"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/todo" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

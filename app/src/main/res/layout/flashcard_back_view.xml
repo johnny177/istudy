@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/BackflashImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -27,7 +27,7 @@
             android:src="@drawable/test2"/>
 
         <TextView
-            android:id="@+id/backTextView"
+            android:id="@+id/definition_text_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="200dp"
@@ -39,9 +39,10 @@
             android:padding="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         <TextView
-            android:id="@+id/backTagTextView"
+            android:id="@+id/tag"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:textAlignment="center"
             android:layout_gravity="center_vertical|center_horizontal"
             android:fontFamily="@font/berkshire_swash"
             android:gravity="center_horizontal|center_vertical"

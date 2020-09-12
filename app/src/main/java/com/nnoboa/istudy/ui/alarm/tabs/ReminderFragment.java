@@ -9,14 +9,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.CursorLoader;
-import androidx.loader.content.Loader;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -28,13 +20,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.adapters.ReminderCursorAdapter;
 import com.nnoboa.istudy.ui.alarm.data.AlarmContract.ReminderEntry;
 import com.nnoboa.istudy.ui.alarm.data.AlarmDbHelper;
-import com.nnoboa.istudy.ui.alarm.service.AlarmStarter;
 import com.nnoboa.istudy.ui.alarm.editors.ReminderEditorActivity;
+import com.nnoboa.istudy.ui.alarm.service.AlarmStarter;
 
 public class ReminderFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
     final int REMINDER_LOADER_ID = 0;

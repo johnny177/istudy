@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sort"
+        android:orderInCategory="100"
+        android:title="@string/sort_by"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/favorites"
+        android:title="@string/show_favorites" />
+    <item
+        android:id="@+id/archives"
+        android:title="@string/archives" />
+    <item
+        android:id="@+id/delete_sets"
+        android:title="@string/delete_all_sets" />
+</menu>

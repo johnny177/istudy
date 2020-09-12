@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -23,6 +24,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.ui.flashcard.data.FlashContract;
+import com.nnoboa.istudy.ui.flashcard.data.FlashDbHelper;
 
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -49,6 +51,8 @@ public class FlashSetEditorActivity extends AppCompatActivity implements LoaderM
         AndroidThreeTen.init(this);
         loadviews();
         checkers();
+
+
 
         addSet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,26 +115,40 @@ public class FlashSetEditorActivity extends AppCompatActivity implements LoaderM
         String setName = nameedit.getText().toString();
         String description = descpEdit.getText().toString();
         long timeCreated = Calendar.getInstance().getTimeInMillis();
-        int favorite = FlashContract.SetEntry.UNSTAR;
+        int favorite = FlashContract.SetEntry.STAR;
         int Progress = 0;
         int CardCount = 0;
+        int archive = 0;
+        String setID = (setName.replace(" ","_"))+"_"+timeCreated;
 
         ContentValues contentValues = new ContentValues();
+
 
         if(TextUtils.isEmpty(setName)){
             nameedit.setError("Set Requires Name");
         }else{
             contentValues.put(FlashContract.SetEntry.COLUMN_TITLE,setName);
+            contentValues.put(FlashContract.SetEntry.SET_ID,setID);
             contentValues.put(FlashContract.SetEntry.COLUMN_DESCRIPTION,description);
             contentValues.put(FlashContract.SetEntry.COLUMN_DATE_CREATED,timeCreated);
             contentValues.put(FlashContract.SetEntry.COLUMN_STAR,favorite);
             contentValues.put(FlashContract.SetEntry.COLUMN_PROGRESS,Progress);
             contentValues.put(FlashContract.SetEntry.COLUMN_COUNT,CardCount);
+            contentValues.put(FlashContract.SetEntry.COLUMN_ARCHIVE,archive);
+            contentValues.put(FlashContract.SetEntry.COLUMN_MONDAY,0f);
+            contentValues.put(FlashContract.SetEntry.COLUMN_TUESDAY,0f);
+            contentValues.put(FlashContract.SetEntry.COLUMN_WEDNESDAY,0f);
+            contentValues.put(FlashContract.SetEntry.COLUMN_THURSDAY,0f);
+            contentValues.put(FlashContract.SetEntry.COLUMN_FRIDAY,0f);
+            contentValues.put(FlashContract.SetEntry.COLUMN_SATURDAY,0f);
+            contentValues.put(FlashContract.SetEntry.COLUMN_SUNDAY,0f);
         }
 
-        if(currentUri == null){
+        if(currentUri == null && !TextUtils.isEmpty(setName)){
             Uri newRowId = getContentResolver().insert(FlashContract.SetEntry.CONTENT_URI,contentValues);
             Log.d("FlashEditor","Added new Row "+newRowId);
+            FlashContract.CardEntry.TABLE_NAME = setID;
+            FlashDbHelper.createSetTable(new FlashDbHelper(this).getWritableDatabase(), FlashContract.CardEntry.TABLE_NAME);
             Toast.makeText(this,"New Flash Set Add", Toast.LENGTH_LONG).show();
             finish();
         }else{

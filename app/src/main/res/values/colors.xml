@@ -5,7 +5,8 @@
     <color name="colorAccent">#003C33</color>
     <color name="clean_color">#BEF6FF</color>
 
-
+    <color name="red">#FF3B00</color>
+    <color name="red_press">#990000</color>
     <!--Color for extended buttons-->
     <color name="colorFloatTint">#00BFA5</color>
     <color name="reminder_default_background">#CEFAF4</color>

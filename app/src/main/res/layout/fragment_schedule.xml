@@ -75,6 +75,7 @@
             android:horizontalSpacing="@dimen/smallest_padding"
             android:choiceMode="multipleChoice"
             android:stretchMode="columnWidth"
+            tools:listitem="@layout/schedule_list"
             android:verticalSpacing="@dimen/smaller_margin"
             android:numColumns="auto_fit"
             android:id="@+id/schedule_list" />

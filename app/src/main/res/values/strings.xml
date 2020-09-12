@@ -222,5 +222,25 @@
     <string name="education_quote_set_quote">Education is the passport to the future, for tomorrow belongs to those who prepare for it today. - Malcom X</string>
     <string name="add_a_new_flash_set_to_begin">Add a new flash set to begin</string>
     <string name="add_flashset">Add FlashSet</string>
+    <string name="set_deleted">Set Deleted Successfully</string>
+    <string name="set_delete_unsucessful">Delete Set Unsuccessful</string>
+    <string name="delete_this_set">Are you sure you want to delete this set ? \n
+        \nNB: This will delete all the cards in this Set</string>
+    <string name="_99">99+</string>
+    <string name="title_delete_set">Delete Set</string>
+    <string name="term">Term</string>
+    <string name="definition">Definition</string>
+    <string name="tag">Tag</string>
+    <string name="tag_for_image_paint_object">Tag for Image / Paint Object</string>
+    <string name="select_image_from_phone">Select Image from Phone</string>
+    <string name="create_a_paint_object">Create a paint Obj</string>
+    <string name="sort_by">Sort By</string>
+    <string name="show_favorites">Show Favorites</string>
+    <string name="archives">Archives</string>
+    <string name="delete_all_sets">Delete All Sets</string>
+    <string name="edit_card">Edit card</string>
+    <string name="add_new_card">Add a card</string>
+    <string name="image_paint">Image / Paint</string>
+    <string name="todo">TODO</string>
 
 </resources>
