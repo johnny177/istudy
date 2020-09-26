@@ -101,22 +101,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_clock"
-                android:text="@string/time"
+                android:src="@drawable/ic_clock"
                 android:onClick="TimeDialog"
+                android:layout_gravity="end"
                 android:layout_margin="@dimen/smallest_padding"
                 android:background="@color/colorPrimary"/>
-            <Button
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/date"
                 android:onClick="DateDialog"
                 android:layout_margin="@dimen/smallest_padding"
+                android:layout_gravity="end"
                 android:background="@color/colorPrimary"
-                android:drawableStart="@drawable/ic_baseline_calendar_today_24"/>
+                android:src="@drawable/ic_baseline_calendar_today_24"/>
 
         </LinearLayout>
     </LinearLayout>

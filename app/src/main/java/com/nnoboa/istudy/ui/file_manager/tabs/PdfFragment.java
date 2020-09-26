@@ -10,6 +10,8 @@ import androidx.loader.content.Loader;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,7 +19,7 @@ import android.widget.ListView;
 
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.adapters.FilesAdapter;
-import com.nnoboa.istudy.ui.file_manager.pdfLoader;
+import com.nnoboa.istudy.ui.file_manager.loaders.pdfLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -45,6 +47,13 @@ public class PdfFragment extends Fragment implements LoaderManager.LoaderCallbac
                 Log.e("Position", i + "");
             }
         });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                pdfLoader.shareFile(getContext(),position);
+                return true;
+            }
+        });
         getLoaderManager().initLoader(0,null,this).forceLoad();
         // Inflate the layout for this fragment
         return root;
@@ -65,5 +74,16 @@ public class PdfFragment extends Fragment implements LoaderManager.LoaderCallbac
     @Override
     public void onLoaderReset(@NonNull Loader<List<File>> loader) {
         filesAdapter.setFiles(new ArrayList<File>());
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(@NonNull Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

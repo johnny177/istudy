@@ -37,7 +37,7 @@ public class FlashProvider extends ContentProvider {
 
     static {
         uriMatcher.addURI(CONTENT_AUTHORITY, FlashContract.PATH_SETS, SETS);
-        uriMatcher.addURI(CONTENT_AUTHORITY, FlashContract.PATH_CARDS + "/#", SET_ID);
+        uriMatcher.addURI(CONTENT_AUTHORITY, FlashContract.PATH_SETS + "/#", SET_ID);
         uriMatcher.addURI(CONTENT_AUTHORITY, FlashContract.PATH_CARDS, CARDS);
         uriMatcher.addURI(CONTENT_AUTHORITY, FlashContract.PATH_CARDS + "/#", CARD_ID);
     }
@@ -85,7 +85,7 @@ public class FlashProvider extends ContentProvider {
             case CARD_ID:
                 selection = FlashContract.CardEntry._ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
-
+                sortOrder = FlashContract.CardEntry.COLUMN_DATE_CREATED+" ASC";
                 cursor = db.query(FlashContract.CardEntry.TABLE_NAME,
                         projection,
                         selection,

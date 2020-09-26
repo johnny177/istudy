@@ -6,10 +6,11 @@ import android.provider.BaseColumns;
 
 public class FlashContract {
 
-    public static final String CONTENT_AUTHORITY = "com.nnoboa.duchess.flash";
+    public static final String CONTENT_AUTHORITY = "com.nnoboa.istudy.flash";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     public static final String PATH_SETS = "sets";
     public static final String PATH_CARDS = "cards";
+
     private FlashContract() {
     }
 
@@ -46,19 +47,54 @@ public class FlashContract {
          */
         public static final String _ID = BaseColumns._ID;
 
+        public static final String SET_ID = "set_id";
+
         public static final String COLUMN_TITLE = "title";
 
         public static final String COLUMN_DESCRIPTION = "set_description";
 
-        public static final String COLUMN_SEMESTER = "semester";
+        public static final String COLUMN_STAR = "star";
 
-        public static final String COLUMN_ACADEMIC_YEAR = "academic_year";
+        public static final String COLUMN_ARCHIVE = "archived";
 
         public static final String COLUMN_COUNT = BaseColumns._COUNT;
 
-        public static final String COLUMN_STUDY_STATUS = "study_status";
+        public static final String COLUMN_PROGRESS = "progress";
 
         public static final String COLUMN_DATE_CREATED = "date_created";
+
+        public static final String COLUMN_MONDAY = "monday";
+
+        public static final String COLUMN_TUESDAY = "tuesday";
+
+        public static final String COLUMN_WEDNESDAY = "wednesday";
+
+        public static final String COLUMN_THURSDAY = "thursday";
+
+        public static final String COLUMN_FRIDAY = "friday";
+
+        public static final String COLUMN_SATURDAY = "saturday";
+
+        public static final String COLUMN_SUNDAY = "sunday";
+
+
+
+
+        /**
+         * possible favorite values
+         */
+
+        public static final int STAR = 0;
+
+        public static final int UNSTAR = 1;
+
+        /**
+         * possible archive values
+         */
+
+        public static final int ARCHIVED = 0;
+
+        public static final int UNARCHIVED = 1;
 
     }
 
@@ -89,7 +125,7 @@ public class FlashContract {
         /**
          * Table name for cards
          **/
-        public static final String TABLE_NAME = "flash_cards";
+        public static String TABLE_NAME = "";
 
         /**
          * Table column keys
@@ -97,14 +133,38 @@ public class FlashContract {
 
         public static final String _ID = BaseColumns._ID;
 
-        public static final String SET_ID = "set_id";
+        public static final String CARD_SET_ID = "set_id";
 
-        public static final String COLUMN_FRONT_TEXT = "front_text";
+        public static final String COLUMN_TERM = "term";
 
-        public static final String COLUMN_BACK_TEXT = "back_text";
+        public static final String COLUMN_DEFINITION = "definition";
 
-        public static final String COLUMN_TAG_TEXT = "tag_text";
+        public static final String COLUMN_TAG = "tag";
 
-        public static final String COLUMN_URI = "path_of_drawings";
+        public static final String COLUMN_URI = "uri";
+
+        public static final String COLUMN_DATE_CREATED = "date_created";
+
+        public static final String COLUMN_MONDAY = "monday";
+
+        public static final String COLUMN_TUESDAY = "tuesday";
+
+        public static final String COLUMN_WEDNESDAY = "wednesday";
+
+        public static final String COLUMN_THURSDAY = "thursday";
+
+        public static final String COLUMN_FRIDAY = "friday";
+
+        public static final String COLUMN_SATURDAY = "saturday";
+
+        public static final String COLUMN_SUNDAY = "sunday";
+
+        public static final String COLUMN_IMAGE_AVAILABLE = "image_available";
+
+        /**
+         * Possible values of COLUMN_IMAGE_AVAILABLE
+         */
+        public static final int TRUE = 0;
+        public static final int FALSE  = 1;
     }
 }

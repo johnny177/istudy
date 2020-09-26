@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add_text"
+        android:title="Add Text" />
+    <item
+        android:id="@+id/take_photo"
+        android:title="Take Photo"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/from_phone"
+        android:title="Upload Image"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/paint"
+        android:title="Drawing" />
+</menu>

@@ -1,22 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.flashcard.FlashCardFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    android:background="@drawable/stock_vector_school_bag_background"
+    tools:context=".ui.flashcard.FlashCardFragment">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:theme="@style/MyMaterialTheme"
+        tools:context=".activities.ReminderActivity">
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/display_text"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Hello World!"-->
+        <!--        android:layout_centerInParent="true"/>-->
+        <RelativeLayout
+            android:id="@+id/fempty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/empty_shelter_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/no_flash"/>
+
+            <TextView
+                android:id="@+id/empty_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_shelter_image"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-medium"
+               android:layout_margin="16dp"
+                android:textColor="#4527A0"
+                android:paddingTop="16dp"
+                android:text="@string/education_quote_set_quote"
+                android:textAppearance="?android:textAppearanceLarge"/>
+
+            <TextView
+                android:id="@+id/empty_subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty_title_text"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif"
+                android:paddingTop="8dp"
+                android:text="@string/add_a_new_flash_set_to_begin"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#4527A0"/>
+        </RelativeLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:visibility="gone"
+            tools:listitem="@layout/flash_set_listview"
+            android:padding="@dimen/small_margin"
+            android:dividerHeight="@dimen/smaller_margin"
+            android:divider="@android:color/transparent"
+            android:id="@+id/flashset_list" />
+
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius="@dimen/small_margin"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/small_margin"
+            android:text="@string/add_flashset"
+            android:textColor="@android:color/white"
+            android:padding="@dimen/smallest_padding"
+            android:backgroundTint="@color/clean_color"
+            android:contentDescription="@string/opens_the_editor_activity"
+            app:shapeAppearance="?attr/shapeAppearanceOverlay"/>
+    </RelativeLayout>
+
+</FrameLayout>

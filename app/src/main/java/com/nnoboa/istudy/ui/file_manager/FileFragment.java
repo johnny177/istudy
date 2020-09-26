@@ -2,6 +2,8 @@ package com.nnoboa.istudy.ui.file_manager;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,6 +18,7 @@ import com.nnoboa.istudy.ui.file_manager.tabs.ExcelFragment;
 import com.nnoboa.istudy.ui.file_manager.tabs.PdfFragment;
 import com.nnoboa.istudy.ui.file_manager.tabs.PowerPointFragment;
 import com.nnoboa.istudy.ui.file_manager.tabs.WordFragment;
+import com.nnoboa.istudy.ui.file_manager.loaders.pdfLoader;
 
 public class FileFragment extends Fragment {
 
@@ -36,40 +39,12 @@ public class FileFragment extends Fragment {
         tabAdapter.addFragment(new PowerPointFragment(), getString(R.string.tab_title_powerpoint));
         viewPager.setAdapter(tabAdapter);
         tabLayout.setupWithViewPager(viewPager);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                pdfLoader.filesList.clear();
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                pdfLoader.filesList.clear();
-                
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
         return root;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

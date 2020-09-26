@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.nnoboa.istudy.Utils.PaintView
+        android:id="@+id/paintView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarAlwaysDrawHorizontalTrack="true">
+    </com.nnoboa.istudy.Utils.PaintView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFE0B2">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:text="Pick \n color"
+                android:id="@+id/pick_color"
+                android:textColor="#fff"
+                android:background="#6200EA"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_alignParentLeft="true"                />
+            <Button
+                android:id="@+id/pen_size"
+                android:background="#00BFA5"
+                android:textColor="#fff"
+                android:text="PEN \nSIZE"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_toRightOf="@id/pick_color"
+                />
+            <Button
+                android:id="@+id/eraser"
+                android:textColor="#fff"
+                android:text="ERa\nser"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:background="#FFD600"
+                android:layout_toLeftOf="@id/emboss_blur"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                />
+            <Button
+                android:layout_alignParentRight="true"
+                android:background="#FF6E40"
+                android:textColor="#fff"
+                android:text="Emboss"
+                android:id="@+id/emboss_blur"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                />
+            <Button
+                android:layout_centerInParent="true"
+                android:background="#FF4081"
+                android:textColor="#fff"
+                android:text="Clear"
+                android:id="@+id/clear_board"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</RelativeLayout>

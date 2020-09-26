@@ -75,6 +75,7 @@
             android:horizontalSpacing="@dimen/smallest_padding"
             android:choiceMode="multipleChoice"
             android:stretchMode="columnWidth"
+            tools:listitem="@layout/schedule_list"
             android:verticalSpacing="@dimen/smaller_margin"
             android:numColumns="auto_fit"
             android:id="@+id/schedule_list" />
@@ -87,7 +88,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/small_margin"
-            android:background="@color/colorFloatTint"
             android:text="@string/add_schedule"
             android:textColor="@android:color/white"
             android:padding="@dimen/smallest_padding"

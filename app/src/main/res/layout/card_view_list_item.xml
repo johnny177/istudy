@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:id="@+id/card_layout"-->
+<!--    android:layout_height="500dp">-->
+
+<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="400dp"
+    app:cardCornerRadius="8dp"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="16dp">
+
+
+        <RelativeLayout
+            android:id="@+id/backView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/backImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <TextView
+                android:id="@+id/definition_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="#F3EDD5"
+                android:allowUndo="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="8dp"
+                android:text="@string/example_back_text"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="32sp"  />
+
+            <ImageButton
+                android:src="@drawable/ic_baseline_add_24"
+                android:id="@+id/edit2_front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent"
+                />
+            <ImageButton
+                android:src="@drawable/ic_baseline_rotate_left_24"
+                android:id="@+id/rotate2_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/frontView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/frontImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <TextView
+                android:id="@+id/term"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:allowUndo="true"
+                android:background="#F3EDD5"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="8dp"
+                android:text="This is how a front side of a card looks like, Press on the plus at the top left corner to select a prefered view. The front View can have an image object,paint object or a text object "
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="32sp" />
+
+
+            <ImageButton
+                android:src="@drawable/ic_baseline_add_24"
+                android:id="@+id/edit_front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent"
+                />
+
+            <ImageButton
+                android:src="@drawable/ic_baseline_cancel_24"
+                android:id="@+id/remove_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                />
+
+            <ImageButton
+                android:src="@drawable/ic_baseline_rotate_left_24"
+                android:id="@+id/rotate_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:padding="4dp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cardfrontView"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="500dp"-->
+<!--        android:layout_marginTop="64dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        app:cardCornerRadius="16dp"-->
+<!--        >-->
+
+<!--    </androidx.cardview.widget.CardView>-->
+<!--</RelativeLayout>-->

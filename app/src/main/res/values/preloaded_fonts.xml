@@ -2,8 +2,13 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aclonica</item>
+        <item>@font/alex_brush</item>
+        <item>@font/amethysta</item>
         <item>@font/amita_bold</item>
         <item>@font/archivo_black</item>
+        <item>@font/berkshire_swash</item>
+        <item>@font/bowlby_one_sc</item>
         <item>@font/coiny</item>
+        <item>@font/enriqueta_bold</item>
     </array>
 </resources>

@@ -562,7 +562,7 @@ public class ScheduleEditorActivity extends AppCompatActivity implements android
     }
 
     /**
-     * Perform the deletion of the pet in the database.
+     * Perform the deletion of the schedule in the database.
      */
     private void deleteSchedule() {
 

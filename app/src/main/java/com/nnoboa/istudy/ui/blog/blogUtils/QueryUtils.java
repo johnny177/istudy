@@ -30,7 +30,7 @@ public class QueryUtils {
     private QueryUtils() {
     }
 
-    public static List<BlogItems> fetchBlogData(String requestUrl) {
+    public static List<BlogItem> fetchBlogData(String requestUrl) {
         //create URL Object
         URL url = createUrl(requestUrl);
 
@@ -44,7 +44,7 @@ public class QueryUtils {
         }
 
         //extract the relevant fields from the json response and create an {@link Event} object
-        List<BlogItems> blogItems = extractBlogDataFromJson(jsonResponse);
+        List<BlogItem> blogItems = extractBlogDataFromJson(jsonResponse);
         return blogItems;
     }
 
@@ -134,15 +134,15 @@ public class QueryUtils {
      * @return blog
      */
 
-    public static List<BlogItems> extractBlogDataFromJson(String blogJSON) {
+    public static List<BlogItem> extractBlogDataFromJson(String blogJSON) {
         //if the JSON string is empty or null, then return early
         if (TextUtils.isEmpty(blogJSON)) {
             return null;
         }
 
         //Create an empty ArrayList that we can start adding blogs to
-        List<BlogItems> blog = new ArrayList<>();
-        BlogItems blogItems;
+        List<BlogItem> blog = new ArrayList<>();
+        BlogItem blogItems;
         JSONObject root;
         {
             try {
@@ -177,7 +177,7 @@ public class QueryUtils {
 
                     Log.d("Item", "time " + publishedDate + " url " + url + " auth " + displayName + " title " + title);
 
-                    blogItems = new BlogItems(displayName, title, url, publishedDate);
+                    blogItems = new BlogItem(displayName, title, url, publishedDate);
                     blog.add(blogItems);
                 }
             } catch (JSONException e) {

@@ -190,6 +190,7 @@ public class ScheduleFragment extends Fragment implements LoaderManager.LoaderCa
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
         inflater.inflate(R.menu.menu_schedule,menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -234,12 +235,5 @@ public class ScheduleFragment extends Fragment implements LoaderManager.LoaderCa
         // Create and show the AlertDialog
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-    }
-
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        getActivity().invalidateOptionsMenu();
     }
 }

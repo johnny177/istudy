@@ -9,6 +9,8 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.IBinder;
@@ -88,12 +90,12 @@ public class RingTonePlayingService extends Service {
         NotificationHelper notificationHelper = new NotificationHelper(getApplicationContext());
         NotificationCompat.Builder nb = notificationHelper.getChannelNotification();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        Uri ringtone = Uri.parse(preferences.getString("general_ringtone", null));
-//        Log.d("RingtonePlayingService", "Notification " + ringtone);
-//        nb.setSound(ringtone);
+        Uri ringtone = Uri.parse(preferences.getString("general_ringtone", String.valueOf(RingtoneManager.getActualDefaultRingtoneUri(this,RingtoneManager.TYPE_ALARM))));
+        Log.d("RingtonePlayingService", "Notification " + ringtone);
+        nb.setSound(ringtone);
 //        MediaPlayer ringTone = MediaPlayer.create(getApplicationContext(),ringtone);
 //        ringTone.start();
-//        AlarmRingTone.playAudio(getApplicationContext(), ringtone);
+        AlarmRingTone.playAudio(getApplicationContext(), ringtone);
 
         assert alarmCategory != null;
         if (alarmCategory.equals(AlarmStarter.ALARM_CATEGORY_REMINDER)) {
@@ -159,9 +161,9 @@ public class RingTonePlayingService extends Service {
 
             nb.setTicker(courseId);
             nb.setContentIntent(contentPendingIntent);
-//            nb.setSound(ringtone, AudioManager.STREAM_ALARM);
+            nb.setSound(ringtone, AudioManager.STREAM_ALARM);
             Notification notification = nb.build();
-//            notification.sound = ringtone;
+            notification.sound = ringtone;
             notificationHelper.getManager().notify((int) _id, notification);
 
 //        startForeground((int) _id,nb.build());
