@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#94FBED</color>
-    <color name="colorPrimaryDark">#43FFE6</color>
-    <color name="colorAccent">#003C33</color>
     <color name="clean_color">#BEF6FF</color>
+    <color name="colorPrimary">#e1bee7</color>
+    <color name="colorAccent">#fff1ff</color>
+    <color name="colorPrimaryDark">#af8eb5</color>
+    <color name="primaryTextColor">#000000</color>
 
     <color name="red">#FF3B00</color>
     <color name="red_press">#990000</color>
     <!--Color for extended buttons-->
     <color name="colorFloatTint">#00BFA5</color>
     <color name="reminder_default_background">#CEFAF4</color>
+    <color name="splash_background_color">#000700</color>
 </resources>

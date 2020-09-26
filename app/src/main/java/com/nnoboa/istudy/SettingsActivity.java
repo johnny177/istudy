@@ -128,7 +128,7 @@ public class SettingsActivity extends AppCompatActivity {
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
                                     .setAvailableProviders(providers)
-                                    .setTheme(R.style.LoginTheme)
+                                    .setTheme(R.style.AuthenticationTheme)
                                     .setLogo(R.drawable.ic_logo)
 
                                     .build(), RC_SIGN_IN

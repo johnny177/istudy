@@ -5,6 +5,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <!--Splash Theme-->
+    <style name="SplashTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/splash_background_color</item>
+        <item name="colorPrimaryDark">@color/splash_background_color</item>
+        <item name="colorAccent">@color/splash_background_color</item>
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -16,15 +25,14 @@
     </style>
 
     <!--Login them for the firebase sign in UI-->
-    <style name="LoginTheme" parent="FirebaseUI">
-        <item name="colorPrimary">#FFFFFF</item>
-        <item name="title">Duchess Chat</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AuthenticationTheme" parent="FirebaseUI">
+        <item name="colorPrimary">@color/splash_background_color</item>
+        <item name="title">istudy</item>
+        <item name="colorAccent">@color/splash_background_color</item>
         <item name="colorPrimaryDark">#C5C5C5</item>
         <item name="colorButtonNormal">@android:color/white</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@drawable/login_background</item>
-        <item name="icon">@drawable/ic_logo</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
 

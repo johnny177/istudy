@@ -28,6 +28,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.nnoboa.istudy.R;
 import com.nnoboa.istudy.ui.flashcard.activities.detail.CardListActivity;
+import com.nnoboa.istudy.ui.flashcard.activities.detail.FlashCardActivity;
 import com.nnoboa.istudy.ui.flashcard.activities.editors.FlashSetEditorActivity;
 import com.nnoboa.istudy.ui.flashcard.data.FlashContract;
 import com.nnoboa.istudy.ui.flashcard.data.FlashDbHelper;
@@ -114,10 +115,10 @@ public class FlashSetCursorAdapter extends CursorAdapter {
         swipeLayout.setOnDoubleClickListener(new SwipeLayout.DoubleClickListener() {
             @Override
             public void onDoubleClick(SwipeLayout layout, boolean surface) {
-                Intent cardIntent = new Intent(context, CardListActivity.class);
-
+                Intent cardIntent = new Intent(context, FlashCardActivity.class);
+                Uri currentUri = ContentUris.withAppendedId(FlashContract.SetEntry.CONTENT_URI,_ID);
                 cardIntent.putExtra("set_id",setID);
-
+                cardIntent.setData(currentUri);
                 context.startActivity(cardIntent);
                 Log.d("FlashSetAdapter",setID);
             }

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+
+    android:background="@drawable/stock_vector_school_bag_background"
     tools:context=".ui.flashcard.FlashCardFragment">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -37,9 +38,11 @@
                 android:layout_below="@+id/empty_shelter_image"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-medium"
+               android:layout_margin="16dp"
+                android:textColor="#4527A0"
                 android:paddingTop="16dp"
                 android:text="@string/education_quote_set_quote"
-                android:textAppearance="?android:textAppearanceMedium"/>
+                android:textAppearance="?android:textAppearanceLarge"/>
 
             <TextView
                 android:id="@+id/empty_subtitle_text"
@@ -50,8 +53,8 @@
                 android:fontFamily="sans-serif"
                 android:paddingTop="8dp"
                 android:text="@string/add_a_new_flash_set_to_begin"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="#A2AAB0"/>
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#4527A0"/>
         </RelativeLayout>
         <ListView
             android:layout_width="match_parent"

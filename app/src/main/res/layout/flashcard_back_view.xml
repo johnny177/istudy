@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="300dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="16dp"
-    android:background="@color/colorFloatTint"
-    android:backgroundTint="@color/colorPrimary"
-    android:backgroundTintMode="src_over"
-    app:cardMaxElevation="32dp">
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <LinearLayout
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="250dp"
+    android:layout_height="500dp"
+    app:cardCornerRadius="16dp"
+    android:layout_marginTop="64dp"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
         android:id="@+id/backView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
         <ImageView
-            android:id="@+id/BackflashImage"
+            android:id="@+id/backImage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="center"
-            android:visibility="gone"
-            android:src="@drawable/test2"/>
+            android:layout_height="match_parent"
+            />
 
         <TextView
             android:id="@+id/definition_text_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="200dp"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@android:color/white"
-            android:fontFamily="@font/enriqueta_bold"
-            android:textAlignment="gravity"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#F3EDD5"
+            android:allowUndo="true"
             android:gravity="center_horizontal|center_vertical"
-            android:padding="16dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-        <TextView
-            android:id="@+id/tag"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:padding="8dp"
+            android:text="@string/example_back_text"
             android:textAlignment="center"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:fontFamily="@font/berkshire_swash"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="this is a plce holder for the tag of the flash card"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="32sp"  />
 
-    </LinearLayout>
+        <ImageButton
+            android:src="@drawable/ic_baseline_add_24"
+            android:id="@+id/edit2_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            />
+        <ImageButton
+            android:src="@drawable/ic_baseline_rotate_left_24"
+            android:id="@+id/rotate2_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            />
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
+</RelativeLayout>

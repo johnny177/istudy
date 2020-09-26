@@ -242,5 +242,11 @@
     <string name="add_new_card">Add a card</string>
     <string name="image_paint">Image / Paint</string>
     <string name="todo">TODO</string>
+    <string name="example_front_text">This is an example of the front side of the card. Click on the plus button on the top  left corner to select the object you want</string>
+    <string name="example_back_text">This is an example of the back side of the card. Click on the plus button on the top  left corner to select the object you want</string>
+
+     <string name ="App_ID">ca-app-pub-9212015223235774~4891306432</string>
+    <string name ="ads_unit_id">ca-app-pub-9212015223235774/8408713768</string>
+    <string name = "test_adunit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 </resources>

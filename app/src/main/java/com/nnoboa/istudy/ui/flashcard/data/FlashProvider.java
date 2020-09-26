@@ -85,7 +85,7 @@ public class FlashProvider extends ContentProvider {
             case CARD_ID:
                 selection = FlashContract.CardEntry._ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
-
+                sortOrder = FlashContract.CardEntry.COLUMN_DATE_CREATED+" ASC";
                 cursor = db.query(FlashContract.CardEntry.TABLE_NAME,
                         projection,
                         selection,
